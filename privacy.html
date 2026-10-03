@@ -27,7 +27,7 @@
   <p class="dek">What A+ Farsi collects, why, and what stays on your child's device.</p>
 
   <div class="meta-row">
-    <span class="meta-chip">Effective 2026-08-22</span>
+    <span class="meta-chip">Effective 2026-10-03</span>
     <span class="meta-chip">judysu1983@icloud.com</span>
   </div>
 
@@ -38,16 +38,27 @@
       <li><b>No ads, no cross-app tracking, no advertising identifiers</b> — nothing here follows you elsewhere.</li>
       <li><b>No third-party analytics or advertising SDKs of any kind</b> — the only usage tracking is first-party code we wrote, sending anonymous events straight to our own server.</li>
       <li>A child's <b>name, avatar, and progress stay on the device</b> — never sent to us.</li>
-      <li>We collect only <b>anonymous usage statistics</b> and process <b>voice recordings solely to score pronunciation</b> and generate spoken examples.</li>
+      <li><b>Voice recordings are sent to a third-party AI service (OpenAI) only after a parent gives permission in the app</b>, solely to score pronunciation and generate spoken examples.</li>
+      <li><b>Anonymous usage statistics are off unless a parent turns them on</b> in the app's "For parents" settings.</li>
     </ul>
   </div>
 
   <section class="doc">
     <h3><span class="tag"></span>What we collect, and why</h3>
-    <p><strong>Voice recordings — only while practicing pronunciation.</strong> When a child taps the microphone to practice speaking Farsi, the app records a short clip and sends it to our server, which forwards it to our speech provider, OpenAI, to transcribe it (so we can score the pronunciation) and to generate spoken word examples. We do not store these recordings to build a profile. Under our provider's API terms, audio is not used to train its models and is retained only briefly, if at all, for abuse monitoring, then deleted. Audio is tied to a request, not to a child's identity.</p>
-    <p><strong>Anonymous usage statistics.</strong> To understand which features help kids learn, the app sends aggregate, anonymous events — for example "app opened" or "viewed the Alphabet screen." These are keyed by a random identifier created on the device — not your name, not your Apple ID, and not a device or advertising ID. We also receive the platform and OS version. This data is not linked to any identity and not used to track you.</p>
+    <p><strong>Voice recordings — only while practicing pronunciation, and only with a parent's permission.</strong> After a parent has allowed it in the app (see the third-party AI section below), when a child taps the microphone to practice speaking Farsi, the app records a short clip and sends it to our server, which forwards it to our speech provider, OpenAI, to transcribe it (so we can score the pronunciation) and to generate spoken word examples. We do not store these recordings to build a profile. Under our provider's API terms, audio is not used to train its models and is retained only briefly, if at all, for abuse monitoring, then deleted. Audio is tied to a request, not to a child's identity.</p>
+    <p><strong>Anonymous usage statistics (off by default).</strong> Only if a parent turns this on under <em>Me → For parents</em>, the app sends aggregate, anonymous events — for example "app opened" or "viewed the Alphabet screen." These are keyed by a random identifier created on the device — not your name, not your Apple ID, and not a device or advertising ID. We also receive the platform and OS version. This data is not linked to any identity and not used to track you.</p>
     <p><strong>Information stored only on the device (not collected by us).</strong> The profile name and avatar you choose, your learning progress, and your language setting are saved locally and never transmitted off the device. Deleting a profile or the app removes all of it.</p>
     <p><strong>Illustrations.</strong> Most word illustrations are bundled inside the app itself and load with no network request. A smaller set of everyday-object photos are requested from Wikimedia Commons at view time — as with any web image, that reveals your device's IP address to that host. We never send Wikimedia any personal information alongside the request.</p>
+  </section>
+
+  <section class="doc">
+    <h3><span class="tag"></span>Third-party AI service (OpenAI) — what is sent, to whom, and with what permission</h3>
+    <p><strong>What data is sent.</strong> When a child taps the speak button on the Practice screen, the app records a short audio clip (a few seconds) of the child saying the word. That clip is sent together with the text of the word being practiced. When the app plays a word that has no pre-recorded audio (for example, a word the child typed into "My words"), the text of that word is sent to generate speech. No name, nickname, avatar, photo, contact information, device identifier, or advertising identifier is ever sent.</p>
+    <p><strong>How it is collected.</strong> Only through the device microphone, only while the child is actively recording on the Practice screen, and only after the iOS microphone permission has been granted.</p>
+    <p><strong>Who it is sent to.</strong> The data travels over an encrypted connection to our own server (hosted on Google Cloud), which forwards it to <b>OpenAI, L.L.C.</b>, a third-party AI service, through OpenAI's API.</p>
+    <p><strong>All uses of this data.</strong> (1) Converting the child's speech to text so the app can compare it with the target word and show a pronunciation score; (2) generating spoken audio of words. The data is not used for advertising, profiling, tracking, or any other purpose.</p>
+    <p><strong>Permission first.</strong> Before anything is sent, the app shows a screen explaining what is sent, who it is sent to, and why, and asks for permission. Because the app is for children, permission can only be given by a parent after passing a parental gate. If permission is not given, nothing is sent: the rest of the app works normally and only speaking practice is turned off. A parent can change this choice at any time under <em>Me → For parents</em>.</p>
+    <p><strong>Equal protection.</strong> OpenAI processes this data under its API data-usage commitments and data processing terms, which provide the same or equal protection as this policy: API data is not used to train OpenAI's models, is used only to provide the requested service, and is retained only temporarily (up to 30 days) for abuse monitoring before deletion. We do not store recordings on our server.</p>
   </section>
 
   <section class="doc">
